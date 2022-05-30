@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+	<title>Editor de Imagini</title>	
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="sidebar">
+	    <nav class="main">
+		    <div class="container">
+                <div class="navbarMain">
+			    <h1 class="header">Editor de Imagini</h1>
+			    <ul class="imgSave">
+				    <button class="btnSave" onclick="saveImage()">Salvare</button>
+				    <button class="btnReset" onclick="resetImage()">Resetare</button>
+			    </ul>
+                </div>
+        </div>
+	    </nav>
+    <div class="container-2">
+	    <img id="importImg" crossorigin="anonymous">
+	    <div class="imgView">
+		<canvas id="canvas" height="0"></canvas>
+	    </div>
+    </div>
+<div class="container app">
+    <div class="description"></div>
+	<div class="imgEffect">
+		<h4>Ajustare</h4>
+			<div class="slider">
+				<span class="cursor-field">
+					<label for="lighter">Luminozitate</label><br>
+					<input id="lighter" type="range" value="100" min="0" max="300" onchange="applyFilter()"><br>
+				</span>
+				<span class="cursor-field">
+                    <label for="contrast">Contrast</label><br>
+					<input id="contrast" type="range" value="100" min="0" max="200" onchange="applyFilter()"><br>
+				</span>
+	        </div>
+			<div class="slider">
+				<span class="cursor-field">
+                     <label for="grayScale">Tonuri de gri</label><br>
+					<input id="grayScale" type="range" value="0"min="0" max="100" onchange="applyFilter()"><br>
+				</span>
+				<span class="cursor-field">
+					<label for="saturation">Saturare</label><br>
+					<input id="saturation" type="range" value="100"min="0" max="300" onchange="applyFilter()"><br>
+				</span>
+			</div>
+			<div class="slider">
+				<span class="cursor-field">
+                    <label for="sepia">Sepia</label><br>
+					<input id="sepia" type="range" value="0"min="0" max="200" onchange="applyFilter()"><br>
+				</span>
+					<span class="cursor-field">
+						<label for="hue">Nuanță</label><br>
+						<input id="hue" type="range" value="0" min="0" max="360" onchange="applyFilter()">
+					</span>
+			</div>
+	</div>
+
+	<div class="imgFilters">
+		<h4>Filtre</h4>
+		<button class="btn1" onclick="a1Filter()">A1</button>
+		<button class="btn2"onclick="a2Filter()">A2</button>
+		<button class="btn3"onclick="a3Filter()">A3</button>
+		<button class="btn4"onclick="a4Filter()">A4</button>
+	</div>
+</div>
+	<div class="file-controls">
+		<h4>Fișiere</h4>
+			<a id="link"></a>
+
+	<div class="file-field input-field">
+		<div class="btn-green">
+			<span>Incarcă fișierul</span>
+			<input type="file" accept="image/*" onchange="uploadImage(event)"></div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/index.js"></script>
+</body>
+
+</html>
